@@ -5,7 +5,7 @@ using RabbitMQ.Client.Events;
 
 namespace ConsumerAmqp
 {
-    class Receive
+    internal class Receive
     {
            public static void Main()
     {

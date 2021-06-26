@@ -4,7 +4,7 @@ using RabbitMQ.Client;
 
 namespace PublisherAmqp
 {
-    class Send
+    internal class Send
     {
         public static void Main()
 
