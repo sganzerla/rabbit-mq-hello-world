@@ -1,9 +1,8 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
-namespace ConsumerAmqp
+namespace Consumer.Amqp.Console
 {
     internal class Receive
     {
@@ -23,14 +22,14 @@ namespace ConsumerAmqp
             {
                 var body = ea.Body.ToArray();
                 var message = Encoding.UTF8.GetString(body);
-                Console.WriteLine(" [x] Received {0}", message);
+                System.Console.WriteLine(" [x] Received {0}", message);
             };
             channel.BasicConsume(queue: "hello",
                                  autoAck: true,
                                  consumer: consumer);
 
-            Console.WriteLine(" Press [enter] to exit.");
-            Console.ReadLine();
+            System.Console.WriteLine(" Press [enter] to exit.");
+            System.Console.ReadLine();
         }
 }
 }
